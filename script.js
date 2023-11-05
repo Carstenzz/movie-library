@@ -49,7 +49,7 @@ function input(title){
 
         currentWord = title
         
-        axios.get(`www.omdbapi.com/?apikey=d684a20e&s=${title}&page=${page}`)
+        axios.get(`https://www.omdbapi.com/?apikey=d684a20e&s=${title}&page=${page}`)
         .then(response => {
 
             let movies = response.data.Search
