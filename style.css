@@ -87,7 +87,7 @@ nav{
     overflow: hidden;
 }
 .show{
-    opacity: 1;
+    opacity: 1 !important;
 }
 .info{
     display: flex;
@@ -219,7 +219,7 @@ nav{
 .slide div:nth-child(4){
     animation: slide 75s infinite linear;
 }
-img{
+img:not(.image){
     padding: .5rem;
 }
 

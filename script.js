@@ -85,9 +85,18 @@ function input(title){
         })
         .catch(function (error) {
             // console.log(error)
+            let h3 = document.createElement('h3')
+            h3.innerHTML = 'Search result is too many or search not found'
+            h3.style.alignSelf = "center"
+            h3.style.transition = '1s'
+            h3.style.opacity = 0
+            
             setTimeout(()=>{
-                document.querySelector("#main").innerHTML = `
-                <h3 style="align-self: center;">Search result is too many or search not found</h3>`
+                document.querySelector("#main").append(h3)
+                setTimeout(()=>{h3.classList.add('show')}, 1)
+                
+                // document.querySelector("#main").innerHTML = `
+                // <h3 style="align-self: center;">Search result is too many or search not found</h3>`
                 document.querySelector(".page").innerHTML = ''
                 ready = !ready
             },2000)
