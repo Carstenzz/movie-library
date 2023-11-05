@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    color: white;
+    overflow-x: hidden;
+    background-color: rgb(27, 27, 28);
+    font-family: 'Montserrat';
+}
+
+
+body::-webkit-scrollbar-track
+{
+    background-color: black;
+}
+
+body::-webkit-scrollbar
+{
+    width: 2px;
+    background-color: black;
+}
+
+body::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgb(0, 105, 181) 20%, rgb(67, 89, 105) 80%, rgba(0,0,0,0) 100%);
+}
+
+
+nav{
+    box-sizing: border-box;
+    position: fixed;
+    height: 4rem;
+    width: 100vw;
+    padding: 0 3rem;
+    background-color: rgb(36, 36, 38);
+    border-bottom: 10px black solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+}
+.searchContainer{
+    position: relative;
+}
+.searchIcon{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+#search{
+    color: white;
+    width: 15rem;
+    background-color: rgb(45, 45, 47);
+    border: 2px rgb(70, 70, 70) solid;
+    padding: .5rem;
+    padding-right: 3rem;
+    border-radius: 5px;
+}
+
+
+#main{
+    padding: 1rem;
+    padding-top: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    min-height: 80vh;
+}
+.card{
+    transition: .5s;
+    opacity: 0;
+    border: 2px black solid;
+    background-color: #303030;
+    margin: 1rem 0;
+    border-radius: 10px;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    overflow: hidden;
+}
+.show{
+    opacity: 1;
+}
+.info{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+.title{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+.desc{
+    border-top: 1px rgb(79, 79, 79) solid;
+    padding: .5rem;
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    place-items: center;
+}
+.divider{
+    color: rgb(79, 79, 79);
+}
+.image{
+    width: 15rem;
+    aspect-ratio: 2/3;
+}
+
+.button{
+    cursor: pointer;
+}
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+
+.gtwDahCape{
+    transition: 1s;
+    font-size: 1.5rem;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+.inner{
+    text-align: center;
+}
+#bigSearch{
+    font-size: 1.2rem;
+    padding: .7rem;
+    padding-right: 3rem;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.329);
+    color: white;
+    border: 2px rgb(116, 116, 116) solid;
+    border-radius: 5px;
+}
+.bigSearchContainer{
+    position: relative;
+    width: 60%;
+}
+.bigSearchIcon{
+    font-size: 2rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(150%, -50%);
+    cursor: pointer;
+}
+
+
+
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.6) 66%, rgba(0,0,0,0.8) 90%);
+    z-index: -1;
+    transition: 3s;
+}
+.sliderContainer{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -2;
+}
+.slider{
+    position: absolute;
+    height:100rem;
+    width:250rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    top: -10rem;
+    left: -50rem;
+    transform: perspective(10000px) rotatex(30deg) rotateY(-30deg) rotateZ(25deg);
+}
+.slide {
+    transform: translateX(0);
+    position: relative;
+    transition: 1.5s cubic-bezier(.6,0,.94,.36);
+}
+.left{
+    transform: translateX(-100%);
+}
+.slide div {
+    position: relative;
+    display: flex;
+    animation: slide 60s infinite linear;
+}
+.slide div:nth-child(2){
+    animation: slide 90s infinite linear;
+}
+.slide div:nth-child(3){
+    animation: slide 110s infinite linear;
+}
+.slide div:nth-child(4){
+    animation: slide 75s infinite linear;
+}
+img{
+    padding: .5rem;
+}
+
+@keyframes slide{
+    0%{transform: translateX(0);}
+    100%{transform: translateX(-50%);}
+}
+
+@media (max-width: 480px) {
+    html{
+        font-size: 10px;
+    }
+}
