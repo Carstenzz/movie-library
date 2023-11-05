@@ -58,6 +58,7 @@ function input(title){
             setTimeout(()=>{
                 document.querySelector('#main').innerHTML = ''
             },1500)
+
             movies.forEach((data,i) => {
                 let div = document.createElement('div')
                 div.classList.add('card')
@@ -70,14 +71,16 @@ function input(title){
                     div.classList.add('show')
                 },100*i + 2000)        
             })
-                setTimeout(()=>{
-                    // console.log('a')
-                    ready = !ready
-                },2500)
-            document.querySelector(".page").innerHTML = `
-            <span class="material-symbols-outlined button" onclick="page--; input(currentWord)">chevron_left</span>
-            <span>Page ${page}</span>
-            <span class="material-symbols-outlined button" onclick="page++; input(currentWord)">chevron_right</span>`
+
+
+            setTimeout(()=>{
+                document.querySelector(".page").innerHTML = `
+                <span class="material-symbols-outlined button" onclick="page--; input(currentWord)">chevron_left</span>
+                <span>Page ${page}</span>
+                <span class="material-symbols-outlined button" onclick="page++; input(currentWord)">chevron_right</span>`
+                // console.log('a')
+                ready = !ready
+            },2500)
             
         })
         .catch(function (error) {
