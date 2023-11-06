@@ -1,6 +1,7 @@
 let page = 1
 let currentWord
 let ready = true
+let errormsg
 
 const slide = document.querySelectorAll(".slide")
 const gtw = document.querySelector('.gtwDahCape')
@@ -51,6 +52,11 @@ function input(title){
         
         axios.get(`https://www.omdbapi.com/?apikey=d684a20e&s=${title}&page=${page}`)
         .then(response => {
+            console.log(response.data)
+
+            if(!response.data.response){
+                errormsg = response.data.Error
+            }
 
             let movies = response.data.Search
             let cards = ''
@@ -86,7 +92,7 @@ function input(title){
         .catch(function (error) {
             // console.log(error)
             let h3 = document.createElement('h3')
-            h3.innerHTML = 'Search result is too many or search not found'
+            h3.innerHTML = errormsg
             h3.style.alignSelf = "center"
             h3.style.transition = '1s'
             h3.style.opacity = 0

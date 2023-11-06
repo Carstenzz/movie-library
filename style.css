@@ -33,7 +33,7 @@ body::-webkit-scrollbar-thumb
 nav{
     box-sizing: border-box;
     position: fixed;
-    height: 4rem;
+    min-height: 4rem;
     width: 100vw;
     padding: 0 3rem;
     background-color: rgb(36, 36, 38);
@@ -141,6 +141,7 @@ nav{
     text-align: center;
 }
 #bigSearch{
+    box-sizing: border-box;
     font-size: 1.2rem;
     padding: .7rem;
     padding-right: 3rem;
@@ -152,14 +153,14 @@ nav{
 }
 .bigSearchContainer{
     position: relative;
-    width: 60%;
+    width: 70%;
 }
 .bigSearchIcon{
     font-size: 2rem;
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translate(150%, -50%);
+    transform: translate(-50%, -50%);
     cursor: pointer;
 }
 
@@ -231,5 +232,9 @@ img:not(.image){
 @media (max-width: 480px) {
     html{
         font-size: 10px;
+    }
+    nav{
+        flex-direction: column;
+        gap: .5rem;
     }
 }

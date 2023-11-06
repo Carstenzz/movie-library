@@ -13,8 +13,8 @@
     <nav>
         <h1>MOVIE LIBRARY</h1>
         <div class="searchContainer">
-            <input type="text" placeholder="Search movie" id="search" oninput="currentWord = this.value; sync()" onblur="input(currentWord)">
-            <span class="material-symbols-outlined searchIcon">search</span>
+            <input type="text" placeholder="Search movie" id="search" oninput="currentWord = this.value; sync()">
+            <span class="material-symbols-outlined searchIcon" onclick="input(currentWord)">search</span>
         </div>
     </nav>
     </header>
@@ -25,8 +25,8 @@
                 <p class="yes2">try to search a movie that comes to mind</p>
             </div>
             <div class="bigSearchContainer">
-                <input type="text" placeholder="Movie Title" id="bigSearch" oninput="currentWord = this.value; sync()" onblur="input(currentWord)">
-                <span class="material-symbols-outlined bigSearchIcon">search</span>
+                <input type="text" placeholder="Movie Title" id="bigSearch" oninput="currentWord = this.value; sync()">
+                <span class="material-symbols-outlined bigSearchIcon" onclick="input(currentWord)">search</span>
             </div>
         </div>
     </main>
