@@ -14,19 +14,21 @@
         <h1>MOVIE LIBRARY</h1>
         <div class="searchContainer">
             <input type="text" placeholder="Search movie" id="search" oninput="currentWord = this.value; sync()">
-            <span class="material-symbols-outlined searchIcon" onclick="input(currentWord)">search</span>
+            <span class="material-symbols-outlined searchIcon" onclick="input(currentWord); page=1">search</span>
         </div>
     </nav>
     </header>
     <main id="main">
-        <div class="gtwDahCape">
-            <div class="inner">
-                <h1 class="yes">FIND ANY MOVIES IN THE WORLD</h1>
-                <p class="yes2">try to search a movie that comes to mind</p>
-            </div>
-            <div class="bigSearchContainer">
-                <input type="text" placeholder="Movie Title" id="bigSearch" oninput="currentWord = this.value; sync()">
-                <span class="material-symbols-outlined bigSearchIcon" onclick="input(currentWord)">search</span>
+        <div class="container">
+            <div class="gtwDahCape">
+                <div class="inner">
+                    <h1 class="yes">FIND ANY MOVIES IN THE WORLD</h1>
+                    <p class="yes2">try to search a movie that comes to mind</p>
+                </div>
+                <div class="bigSearchContainer">
+                    <input type="text" placeholder="Movie Title" id="bigSearch" oninput="currentWord = this.value; sync()">
+                    <span class="material-symbols-outlined bigSearchIcon" onclick="input(currentWord); page=1">search</span>
+                </div>
             </div>
         </div>
     </main>

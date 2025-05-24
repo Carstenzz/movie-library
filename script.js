@@ -50,7 +50,7 @@ function input(title){
 
         currentWord = title
         
-        axios.get(`https://www.omdbapi.com/?apikey=d684a20e&s=${title}&page=${page}`)
+        axios.get(`https://www.omdbapi.com/?apikey=df662044&s=${title}&page=${page}`)
         .then(response => {
             console.log(response.data)
 
@@ -62,7 +62,7 @@ function input(title){
             let cards = ''
             
             setTimeout(()=>{
-                document.querySelector('#main').innerHTML = ''
+                document.querySelector('.container').innerHTML = ''
             },1500)
 
             movies.forEach((data,i) => {
@@ -71,7 +71,7 @@ function input(title){
                 div.innerHTML= showdata(data)
                 
                 setTimeout(()=>{
-                    document.querySelector('#main').append(div)
+                    document.querySelector('.container').append(div)
                 },2000)
                 setTimeout(()=>{
                     div.classList.add('show')
@@ -98,10 +98,10 @@ function input(title){
             h3.style.opacity = 0
             
             setTimeout(()=>{
-                document.querySelector("#main").append(h3)
+                document.querySelector(".container").append(h3)
                 setTimeout(()=>{h3.classList.add('show')}, 1)
                 
-                // document.querySelector("#main").innerHTML = `
+                // document.querySelector(".container").innerHTML = `
                 // <h3 style="align-self: center;">Search result is too many or search not found</h3>`
                 document.querySelector(".page").innerHTML = ''
                 ready = !ready
@@ -113,7 +113,7 @@ function input(title){
 function showdata(data){
     
     return `
-    <img src="${data.Poster}" class="image">
+    <img src="${data.Poster}" class="image" alt="movie image">
     <div class="info">
         <h3 class="title">${data.Title}</h3>
         <div class="desc">
